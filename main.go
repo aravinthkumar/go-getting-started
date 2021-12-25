@@ -3,19 +3,19 @@ package main
 import "fmt"
 
 func main() {
-	// Holding the address(pointer) and memory
-	var firstName *string = new(string)
-	// deferencing the firstName to add value
-	*firstName = "Aravinth"
-	// Printing the deference value and address
-	fmt.Println(*firstName, firstName)
+	// Simple example of constant, constant can't be changed hence Go expects to declare the value along.
+	const pi = 3.1415
+	fmt.Println(pi)
 
-	// Another example with address of operator(pointer)
-	lastName := "Kumar"
-	ptr := &lastName
-	fmt.Println(lastName, ptr)
+	// Dynamic changing of datatype
+	const c = 3
+	fmt.Println(c + 3)
 
-	// Trying to change the value of lastName but the pointer values remains the same
-	lastName = "Jain"
-	fmt.Println(lastName, ptr)
+	fmt.Println(c + 1.2)
+
+	// Strict type on constant
+	const d int = 4
+	fmt.Println(d + 3)
+	// casting to float when dealing with float value else go doesn't allow
+	fmt.Println(float32(d) + 1.2)
 }
