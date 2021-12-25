@@ -13,4 +13,8 @@ func main() {
 	var f float32 = 3.14
 	fmt.Println(f)
 
+	// Go determines the variable type during assignment
+	firstName := "Arman"
+	fmt.Println(firstName)
+
 }
