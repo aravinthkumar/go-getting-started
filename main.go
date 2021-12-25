@@ -2,20 +2,22 @@ package main
 
 import "fmt"
 
+// Constants can be declared outside the function similar to import statemetns
+// iota can dynamically assign values to constants with iteration
+// the value second is not assigned still iota is assigned at compile time.
+const (
+	first = iota
+	second
+	third = iota + 1
+)
+
+// New constant section with iota would be reset
+const (
+	fourth = iota
+)
+
 func main() {
-	// Simple example of constant, constant can't be changed hence Go expects to declare the value along.
-	const pi = 3.1415
-	fmt.Println(pi)
 
-	// Dynamic changing of datatype
-	const c = 3
-	fmt.Println(c + 3)
+	fmt.Println(first, second, third, fourth)
 
-	fmt.Println(c + 1.2)
-
-	// Strict type on constant
-	const d int = 4
-	fmt.Println(d + 3)
-	// casting to float when dealing with float value else go doesn't allow
-	fmt.Println(float32(d) + 1.2)
 }
