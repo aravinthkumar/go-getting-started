@@ -9,4 +9,8 @@ func main() {
 	i = 4
 	fmt.Println(i)
 
+	// Normal declaration with assignment
+	var f float32 = 3.14
+	fmt.Println(f)
+
 }
