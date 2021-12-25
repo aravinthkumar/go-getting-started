@@ -17,4 +17,12 @@ func main() {
 	firstName := "Arman"
 	fmt.Println(firstName)
 
+	// defining a boolean
+	b := true
+	fmt.Println(b)
+
+	// Go built in complex function
+	c := complex(3, 4)
+	fmt.Println(c)
+
 }
