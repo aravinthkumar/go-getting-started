@@ -3,34 +3,19 @@ package main
 import "fmt"
 
 func main() {
+	// Holding the address(pointer) and memory
+	var firstName *string = new(string)
+	// deferencing the firstName to add value
+	*firstName = "Aravinth"
+	// Printing the deference value and address
+	fmt.Println(*firstName, firstName)
 
-	// Normal declaration and assignment
-	var i int
-	i = 4
-	fmt.Println(i)
+	// Another example with address of operator(pointer)
+	lastName := "Kumar"
+	ptr := &lastName
+	fmt.Println(lastName, ptr)
 
-	// Normal declaration with assignment
-	var f float32 = 3.14
-	fmt.Println(f)
-
-	// Go determines the variable type during assignment
-	firstName := "Arman"
-	fmt.Println(firstName)
-
-	// defining a boolean
-	b := true
-	fmt.Println(b)
-
-	// Go built in complex function
-	c := complex(3, 4)
-	fmt.Println(c)
-
-	// to print the real and imaginary and also decalare two variable in single statement
-	r, im := real(c), imag(c)
-	fmt.Println(r, im)
-
-	//Another example for declaring two variable in same statement.
-	middleName, lastName := "Malik", "Khan"
-	fmt.Println(middleName, lastName)
-
+	// Trying to change the value of lastName but the pointer values remains the same
+	lastName = "Jain"
+	fmt.Println(lastName, ptr)
 }
