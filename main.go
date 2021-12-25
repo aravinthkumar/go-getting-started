@@ -3,31 +3,22 @@ package main
 import "fmt"
 
 func main() {
-	// Definition of a struct
-	type user struct {
-		ID        int
-		FirstName string
-		LastName  string
-	}
+	fmt.Println("Hello, Gophers")
+	port := 3000
+	// function invoked with argument
+	b, err := startWebServer(port, "2")
+	fmt.Println(b, err)
+}
 
-	// Initialize a variable with the struct type, following would have initial values
-	var user1 user
-	fmt.Println(user1)
+// Function with input parametes
+func startWebServer(port int, numberOfRetries string) (bool, error) {
 
-	// Initialize with values
-	user1.ID = 1
-	user1.FirstName = "Aravinth"
-	user1.LastName = "Kumar"
+	fmt.Println("Starting server ....")
 
-	fmt.Println(user1)
+	fmt.Println("Number of time retried", numberOfRetries)
+	// do something
+	fmt.Println("Server started in port", port)
 
-	fmt.Println(user1.FirstName, user1.LastName)
-	// Another way to Declare and initialize a variable with values
-	user2 := user{
-		ID:        2,
-		FirstName: "Rahul",
-		LastName:  "Jain",
-	}
-	fmt.Println(user2)
+	return true, nil
 
 }
