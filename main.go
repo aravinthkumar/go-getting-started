@@ -2,22 +2,16 @@ package main
 
 import "fmt"
 
-// Constants can be declared outside the function similar to import statemetns
-// iota can dynamically assign values to constants with iteration
-// the value second is not assigned still iota is assigned at compile time.
-const (
-	first = iota
-	second
-	third = iota + 1
-)
-
-// New constant section with iota would be reset
-const (
-	fourth = iota
-)
-
 func main() {
+	// Array declaration of type int
+	var arr [3]int
+	arr[0] = 1
+	arr[1] = 2
+	arr[2] = 3
+	fmt.Println(arr[2], arr)
 
-	fmt.Println(first, second, third, fourth)
+	// Another way to declare and initialize
+	arr2 := [3]int{4, 5, 5}
+	fmt.Println(arr2, arr2[1])
 
 }
