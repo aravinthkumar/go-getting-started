@@ -17,6 +17,7 @@ var (
 )
 
 func GetUsers() []*User {
+
 	return users
 }
 
@@ -44,6 +45,7 @@ func UpdateUser(u User) (User, error) {
 	for i, v := range users {
 		if u.ID == v.ID {
 			users[i] = &u
+			return u, nil
 		}
 	}
 
@@ -55,7 +57,9 @@ func DeleteUser(id int) error {
 	for i, v := range users {
 		if id == v.ID {
 			users = append(users[:i], users[i+1:]...)
+			return nil
 		}
 	}
-	return fmt.Errorf("User '%v'  not found to delete", id)
+
+	return fmt.Errorf("User '%v'  deleted", id)
 }
