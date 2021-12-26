@@ -11,7 +11,7 @@ type userController struct {
 
 // Method
 // To differentiate a method from function is by providing a variable before the method name
-// This method also implements the http/Handler interface
+// This method also implements the http/Handler interface since it matches the inteface signature
 func (uc userController) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("Hello from User Controller"))
 }
